@@ -28,9 +28,9 @@ object Main: TMain
     object Label1: TLabel
       Left = 16
       Top = 16
-      Width = 319
+      Width = 12
       Height = 19
-      Caption = #1050#1054#1053#1060#1048#1043#1059#1056#1040#1058#1054#1056' '#1057#1048#1057#1058#1045#1052#1053#1054#1043#1054' '#1041#1051#1054#1050#1040
+      Caption = #1040
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -136,7 +136,7 @@ object Main: TMain
     Align = alClient
     DataSource = DataSource1
     PanelHeight = 75
-    PanelWidth = 444
+    PanelWidth = 443
     TabOrder = 2
     OnClick = DBCtrlGrid1Click
     object DBText1: TDBText
