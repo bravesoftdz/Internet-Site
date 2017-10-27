@@ -25,6 +25,7 @@ object Main: TMain
     Ctl3D = True
     ParentCtl3D = False
     TabOrder = 0
+    ExplicitTop = 6
     object Label1: TLabel
       Left = 16
       Top = 16
@@ -184,13 +185,13 @@ object Main: TMain
       'er;SERVER=127.0.0.1;UID=root;PWD=2307;DATABASE=store;PORT=3306;C' +
       'OLUMN_SIZE_S32=1"'
     Mode = cmShareDenyNone
-    Left = 352
-    Top = 24
+    Left = 56
+    Top = 32
   end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
-    Left = 440
-    Top = 24
+    Left = 160
+    Top = 32
   end
   object ADOQuery1: TADOQuery
     Active = True
@@ -199,8 +200,8 @@ object Main: TMain
     Parameters = <>
     SQL.Strings = (
       'select idcomponent, name from component;')
-    Left = 568
-    Top = 24
+    Left = 304
+    Top = 32
   end
   object ADOQuery2: TADOQuery
     Active = True
@@ -228,7 +229,7 @@ object Main: TMain
         'nfiguration.col12 OR element.idelement=configuration.col13)'
       'AND configuration.idconfiguration=1234 ORDER BY idelement'
       ') AS ACTION ;')
-    Left = 536
+    Left = 576
     Top = 232
   end
   object DataSource2: TDataSource
