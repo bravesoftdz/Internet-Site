@@ -25,7 +25,6 @@ object Main: TMain
     Ctl3D = True
     ParentCtl3D = False
     TabOrder = 0
-    ExplicitTop = 6
     object Label1: TLabel
       Left = 16
       Top = 16
@@ -177,25 +176,12 @@ object Main: TMain
       Visible = False
     end
   end
-  object ADOConnection1: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=MSDASQL.1;Password=2307;Persist Security Info=True;User' +
-      ' ID=root;Extended Properties="Driver=MySQL ODBC 5.3 Unicode Driv' +
-      'er;SERVER=127.0.0.1;UID=root;PWD=2307;DATABASE=store;PORT=3306;C' +
-      'OLUMN_SIZE_S32=1"'
-    Mode = cmShareDenyNone
-    Left = 56
-    Top = 32
-  end
   object DataSource1: TDataSource
     DataSet = ADOQuery1
     Left = 160
     Top = 32
   end
   object ADOQuery1: TADOQuery
-    Active = True
-    Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
@@ -204,8 +190,6 @@ object Main: TMain
     Top = 32
   end
   object ADOQuery2: TADOQuery
-    Active = True
-    Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (

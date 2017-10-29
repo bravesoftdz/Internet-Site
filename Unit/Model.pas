@@ -15,33 +15,36 @@ type
   const LabelCaption = 'ÊÎÍÔÈÃÓĞÀÒÎĞ ÑÈÑÒÅÌÍÎÃÎ ÁËÎÊÀ';
   private
     privateCaptionStore: string;
+    ADOConnection1: TADOConnection;
     procedure SetÑaptionStore(Value: string);
     function GetÑaptionStore: string;
   public
     MyLabel: TLabel;
     MyADOQuery: TADOQuery;
+    function GetADOConnection1: TADOConnection;
     property Caption: string read GetÑaptionStore write SetÑaptionStore;
     function CreateStoreForm(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
     function SelectCconfigurationOfficeEconom(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
     function SelectSum(ADOQuery2: TADOQuery; DBText5: TDBText;
-          DataSource2: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource2: TDataSource): TADOQuery;
     function SelectSumOfficeEconom(ADOQuery2: TADOQuery; DBText5: TDBText;
-          DataSource2: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource2: TDataSource): TADOQuery;
     function SelectElement(ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
     function UpdateConfiguration(Label1: TLabel; ADOQuery1: TADOQuery; DBText2: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
     function CleanAndSelectConfiguration(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
     function Selectdescription(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
+    constructor create;
   end;
 
 implementation
@@ -50,9 +53,10 @@ implementation
 
 function MyStore.CleanAndSelectConfiguration(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
 begin
   Label1.Caption := 'ÊÎÍÔÈÃÓĞÀÒÎĞ ÑÈÑÒÅÌÍÎÃÎ ÁËÎÊÀ';
+  ADOQuery1.Connection:=ADOConnection1;
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
   ADOQuery1.SQL.Add
@@ -81,15 +85,27 @@ begin
   result:=ADOQuery1;
 end;
 
+constructor MyStore.create;
+begin
+  inherited;
+  if not Assigned(ADOConnection1) then
+    ADOConnection1 := TADOConnection.Create(nil);
+  ADOConnection1.ConnectionString :=
+    'Provider=MSDASQL.1;Password=2307;Persist Security Info=True;User ID=root;Extended Properties="DRIVER={MySQL ODBC 5.3 Unicode Driver};UID=root;PWD=2307;SERVER=localhost;DATABASE=store;PORT=3306;COLUMN_SIZE_S32=1;";Initial Catalog=store';
+  ADOConnection1.LoginPrompt := false;
+  ADOConnection1.Connected := true;
+end;
+
+
 function MyStore.CreateStoreForm(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;
 begin
   Label1.Caption:='ÊÎÍÔÈÃÓĞÀÒÎĞ ÑÈÑÒÅÌÍÎÃÎ ÁËÎÊÀ';
   MyLabel.Free;
 
   MyLabel:= Label1;
-
+  ADOQuery1.Connection:=ADOConnection1;
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
   ADOQuery1.SQL.Add
@@ -113,6 +129,11 @@ begin
   result:=ADOQuery1;
 end;
 
+function MyStore.GetADOConnection1: TADOConnection;
+begin
+  result:=ADOConnection1;
+end;
+
 function MyStore.GetÑaptionStore: string;
 begin
  result:=privateCaptionStore;
@@ -120,9 +141,10 @@ end;
 
 function MyStore.SelectCconfigurationOfficeEconom(Label1: TLabel;
   ADOQuery1: TADOQuery; DBText1, DBText2, DBText3, DBText4: TDBText;
-  DataSource1: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+  DataSource1: TDataSource): TADOQuery;
 begin
   Label1.Caption := 'Îôèñíûé "İêîíîì"';
+  ADOQuery1.Connection:=ADOConnection1;
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
   ADOQuery1.SQL.Add
@@ -146,10 +168,10 @@ begin
 end;
 
 function MyStore.Selectdescription(Label1: TLabel; ADOQuery1: TADOQuery; DBText1, DBText2,
-  DBText3, DBText4: TDBText; DataSource1: TDataSource;
-  ADOConnection1: TADOConnection): TADOQuery;
+  DBText3, DBText4: TDBText; DataSource1: TDataSource): TADOQuery;
 begin
     Label1.Caption := DBText4.Field.Text;
+    ADOQuery1.Connection:=ADOConnection1;
     ADOQuery1.Close;
     ADOQuery1.SQL.Clear;
     ADOQuery1.SQL.Add
@@ -164,9 +186,9 @@ begin
 end;
 
 function MyStore.SelectElement(ADOQuery1: TADOQuery; DBText1,
-  DBText2, DBText3, DBText4: TDBText; DataSource1: TDataSource;
-  ADOConnection1: TADOConnection): TADOQuery;
+  DBText2, DBText3, DBText4: TDBText; DataSource1: TDataSource): TADOQuery;
 begin
+    ADOQuery1.Connection:=ADOConnection1;
     ADOQuery1.SQL.Clear;
     ADOQuery1.SQL.Add
       ('SELECT element.component, element.idelement, element.price, element.description FROM element, configuration  WHERE (element.idelement=configuration.col1 ');
@@ -189,8 +211,9 @@ begin
 end;
 
 function MyStore.SelectSum(ADOQuery2: TADOQuery; DBText5: TDBText;
-  DataSource2: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+  DataSource2: TDataSource): TADOQuery;
 begin
+    ADOQuery2.Connection:=ADOConnection1;
     ADOQuery2.Close;
     ADOQuery2.SQL.Clear;
     ADOQuery2.SQL.Add('SELECT SUM(price) FROM ( ');
@@ -212,8 +235,9 @@ begin
 end;
 
 function MyStore.SelectSumOfficeEconom(ADOQuery2: TADOQuery; DBText5: TDBText;
-  DataSource2: TDataSource; ADOConnection1: TADOConnection): TADOQuery;
+  DataSource2: TDataSource): TADOQuery;
 begin
+    ADOQuery2.Connection:=ADOConnection1;
     ADOQuery2.Close;
     ADOQuery2.SQL.Clear;
     ADOQuery2.SQL.Add('SELECT SUM(price) FROM ( ');
@@ -240,8 +264,7 @@ begin
 end;
 
 function MyStore.UpdateConfiguration(Label1: TLabel; ADOQuery1: TADOQuery;
-  DBText2: TDBText; DataSource1: TDataSource;
-  ADOConnection1: TADOConnection): TADOQuery;
+  DBText2: TDBText; DataSource1: TDataSource): TADOQuery;
 var
 i: integer;
 s: string;
@@ -249,6 +272,7 @@ begin
     Label1.Caption := 'ÊÎÍÔÈÃÓĞÀÒÎĞ ÑÈÑÒÅÌÍÎÃÎ ÁËÎÊÀ';
     i := strtoint(DBText2.Field.Text);
     s := DBText2.Field.Text;
+    ADOQuery1.Connection:=ADOConnection1;
     ADOQuery1.Close;
     ADOQuery1.SQL.Clear;
     if (i >= 100) and (i < 200) then
