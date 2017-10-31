@@ -16,12 +16,17 @@ type
   private
     privateCaptionStore: string;
     ADOConnection1: TADOConnection;
+    ADOQuery2: TADOQuery;
+    DataSource2: TDataSource;
     procedure SetÑaptionStore(Value: string);
     function GetÑaptionStore: string;
   public
     MyLabel: TLabel;
     MyADOQuery: TADOQuery;
     function GetADOConnection1: TADOConnection;
+    function GetDataSource(ExecSQL1, SQL2, SQL3, SQL4, SQL5, SQL6, SQL7, SQL8,
+          SQL9, SQL10: string; ADOQuery: TADOQuery; DataSource: TDataSource)
+          : TDataSource;
     property Caption: string read GetÑaptionStore write SetÑaptionStore;
     function CreateStoreForm(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
@@ -29,8 +34,7 @@ type
     function SelectCconfigurationOfficeEconom(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
           DataSource1: TDataSource): TADOQuery;
-    function SelectSum(ADOQuery2: TADOQuery; DBText5: TDBText;
-          DataSource2: TDataSource): TADOQuery;
+    function SelectSum(idconfiguration: string): TDataSource;
     function SelectSumOfficeEconom(ADOQuery2: TADOQuery; DBText5: TDBText;
           DataSource2: TDataSource): TADOQuery;
     function SelectElement(ADOQuery1: TADOQuery;
@@ -210,9 +214,47 @@ begin
   result:=ADOQuery1;
 end;
 
-function MyStore.SelectSum(ADOQuery2: TADOQuery; DBText5: TDBText;
-  DataSource2: TDataSource): TADOQuery;
+function MyStore.GetDataSource(ExecSQL1, SQL2, SQL3, SQL4, SQL5, SQL6, SQL7, SQL8,
+  SQL9, SQL10: string; ADOQuery: TADOQuery; DataSource: TDataSource)
+  : TDataSource;
 begin
+  if not Assigned(ADOQuery) then
+    ADOQuery := TADOQuery.create(nil);
+  ADOQuery.Connection := ADOConnection1;
+  ADOQuery.Close;
+  ADOQuery.SQL.Clear;
+  ADOQuery.SQL.Add(ExecSQL1);
+  ADOQuery.ExecSQL;
+  ADOQuery.SQL.Clear;
+  ADOQuery.SQL.Add(SQL2);
+  ADOQuery.SQL.Add(SQL3);
+  ADOQuery.SQL.Add(SQL4);
+  ADOQuery.SQL.Add(SQL5);
+  ADOQuery.SQL.Add(SQL6);
+  ADOQuery.SQL.Add(SQL7);
+  ADOQuery.SQL.Add(SQL8);
+  ADOQuery.SQL.Add(SQL9);
+  ADOQuery.SQL.Add(SQL10);
+  ADOQuery.Open;
+  ADOQuery.Active := true;
+  if not Assigned(DataSource) then
+    DataSource := TDataSource.create(nil);
+  DataSource.DataSet := ADOQuery;
+  result := DataSource;
+end;
+
+function MyStore.SelectSum(idconfiguration: string): TDataSource;
+begin
+  result := GetDataSource
+    ('UPDATE configuration SET idconfiguration=1234 WHERE idconfiguration=1234','SELECT SUM(price) FROM ( ',
+    ' SELECT element.component, element.idelement, element.price, element.description FROM element, configuration  WHERE (element.idelement=configuration.col1 ',
+    ' OR element.idelement=configuration.col2 OR element.idelement=configuration.col3 OR element.idelement=configuration.col4 ',
+    ' OR element.idelement=configuration.col5 OR element.idelement=configuration.col6 OR element.idelement=configuration.col7 ',
+    ' OR element.idelement=configuration.col8 OR element.idelement=configuration.col9 OR element.idelement=configuration.col10 ',
+    ' OR element.idelement=configuration.col11 OR element.idelement=configuration.col12 OR element.idelement=configuration.col13) ',
+    ' AND configuration.idconfiguration='+idconfiguration+' ORDER BY idelement  ) AS ACTION ;', '', '', ADOQuery2, DataSource2);
+
+    {
     ADOQuery2.Connection:=ADOConnection1;
     ADOQuery2.Close;
     ADOQuery2.SQL.Clear;
@@ -231,7 +273,7 @@ begin
       ('AND configuration.idconfiguration=1234 ORDER BY idelement  ) AS ACTION ;');
     DBText5.DataField := 'SUM(price)';
     ADOQuery2.Open;
-    result:=ADOQuery2;
+    result:=ADOQuery2;  }
 end;
 
 function MyStore.SelectSumOfficeEconom(ADOQuery2: TADOQuery; DBText5: TDBText;
