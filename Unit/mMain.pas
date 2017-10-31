@@ -48,14 +48,27 @@ implementation
 
 procedure TMain.Button2Click(Sender: TObject);
 begin
-  ADOQuery1:=store.CleanAndSelectConfiguration(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+  Label1.Caption := ' ŒÕ‘»√”–¿“Œ– —»—“≈ÃÕŒ√Œ ¡ÀŒ ¿';
+  //ADOQuery1:=store.CleanAndSelectConfiguration(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+    DBCtrlGrid1.DataSource := store.CleanAndSelectConfiguration('1234');
+    DBText1.DataField := 'description';
+    DBText2.DataField := 'idelement';
+    DBText3.DataField := 'price';
+    DBText4.DataField := 'component';
+
     DBText5.DataSource := store.SelectSum('1234');
     DBText5.DataField := 'SUM(price)';
 end;
 
 procedure TMain.Button3Click(Sender: TObject);
 begin
-  ADOQuery1:=store.SelectCconfigurationOfficeEconom(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+  //ADOQuery1:=store.SelectCconfigurationOfficeEconom(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+    //DBCtrlGrid1.DataSource := store.CleanAndSelectConfiguration('1234');
+    DBText1.DataField := 'description';
+    DBText2.DataField := 'idelement';
+    DBText3.DataField := 'price';
+    DBText4.DataField := 'component';
+
     DBText5.DataSource := store.SelectSum('1234');
     DBText5.DataField := 'SUM(price)';
 end;
@@ -64,14 +77,27 @@ procedure TMain.DBCtrlGrid1Click(Sender: TObject);
 begin
   if Label1.Caption = store.LabelCaption then
   begin
-    ADOQuery1:=store.Selectdescription(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+    //ADOQuery1:=store.Selectdescription(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+    //DBCtrlGrid1.DataSource := store.CleanAndSelectConfiguration('1234');
+    DBText1.DataField := 'description';
+    DBText2.DataField := 'idelement';
+    DBText3.DataField := 'price';
+    DBText4.DataField := 'component';
+
     DBText5.DataSource := store.SelectSum('1234');
     DBText5.DataField := 'SUM(price)';
   end
   else
   begin
     ADOQuery1:=store.UpdateConfiguration(Label1, ADOQuery1, DBText2, DataSource1);
-    ADOQuery1:=store.SelectElement(ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+
+    //ADOQuery1:=store.SelectElement(ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+    //DBCtrlGrid1.DataSource := store.CleanAndSelectConfiguration('1234');
+    DBText1.DataField := 'description';
+    DBText2.DataField := 'idelement';
+    DBText3.DataField := 'price';
+    DBText4.DataField := 'component';
+
     DBText5.DataSource := store.SelectSum('1234');
     DBText5.DataField := 'SUM(price)';
   end;
@@ -80,7 +106,13 @@ end;
 procedure TMain.FormCreate(Sender: TObject);
 begin
   store:=MyStore.Create;
-  ADOQuery1:=store.CreateStoreForm(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+  //ADOQuery1:=store.CreateStoreForm(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
+    //DBCtrlGrid1.DataSource := store.CleanAndSelectConfiguration('1234');
+    DBText1.DataField := 'description';
+    DBText2.DataField := 'idelement';
+    DBText3.DataField := 'price';
+    DBText4.DataField := 'component';
+
     DBText5.DataSource := store.SelectSum('1234');
     DBText5.DataField := 'SUM(price)';
   Label1:=store.MyLabel;

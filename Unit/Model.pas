@@ -42,9 +42,7 @@ type
           DataSource1: TDataSource): TADOQuery;
     function UpdateConfiguration(Label1: TLabel; ADOQuery1: TADOQuery; DBText2: TDBText;
           DataSource1: TDataSource): TADOQuery;
-    function CleanAndSelectConfiguration(Label1: TLabel; ADOQuery1: TADOQuery;
-          DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource): TADOQuery;
+    function CleanAndSelectConfiguration(idconfiguration: string): TDataSource;
     function Selectdescription(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
           DataSource1: TDataSource): TADOQuery;
@@ -55,11 +53,19 @@ implementation
 
 { MyClass }
 
-function MyStore.CleanAndSelectConfiguration(Label1: TLabel; ADOQuery1: TADOQuery;
-          DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource): TADOQuery;
+function MyStore.CleanAndSelectConfiguration(idconfiguration: string): TDataSource;
 begin
-  Label1.Caption := ' ŒÕ‘»√”–¿“Œ– —»—“≈ÃÕŒ√Œ ¡ÀŒ ¿';
+  //Label1.Caption := ' ŒÕ‘»√”–¿“Œ– —»—“≈ÃÕŒ√Œ ¡ÀŒ ¿';
+  result := GetDataSource
+    ('UPDATE configuration SET idconfiguration=1234, name="test", col1=100, col2=200, col3=300, col4=400, col5=500, col6=600, col7=700, col8=800, col9=900, col10=1000, col11=1100, col12=1200, col13=1300 WHERE idconfiguration='+idconfiguration,
+    ' SELECT configuration.sum, element.component, element.idelement, element.price, element.component, element.description FROM element, configuration  WHERE (element.idelement=configuration.col1 ',
+    ' OR element.idelement=configuration.col2 OR element.idelement=configuration.col3 OR element.idelement=configuration.col4 ',
+    ' OR element.idelement=configuration.col5 OR element.idelement=configuration.col6 OR element.idelement=configuration.col7 ',
+    ' OR element.idelement=configuration.col8 OR element.idelement=configuration.col9 OR element.idelement=configuration.col10 ',
+    ' OR element.idelement=configuration.col11 OR element.idelement=configuration.col12 OR element.idelement=configuration.col13) ',
+    ' AND configuration.idconfiguration='+idconfiguration+' ORDER BY idelement; ',
+    '', '', '', ADOQuery2, DataSource2);
+    {
   ADOQuery1.Connection:=ADOConnection1;
   ADOQuery1.Close;
   ADOQuery1.SQL.Clear;
@@ -74,7 +80,7 @@ begin
   ADOQuery1.SQL.Add
     (' OR element.idelement=configuration.col2 OR element.idelement=configuration.col3 OR element.idelement=configuration.col4 ');
   ADOQuery1.SQL.Add
-    (' OR element.idelement=configuration.col5 OR element.idelement=configuration.col6 OR element.idelement=configuration.col7 ');
+    (' OR element.idelement=configuration.col2 OR element.idelement=configuration.col3 OR element.idelement=configuration.col4 ');
   ADOQuery1.SQL.Add
     (' OR element.idelement=configuration.col8 OR element.idelement=configuration.col9 OR element.idelement=configuration.col10 ');
   ADOQuery1.SQL.Add
@@ -86,7 +92,7 @@ begin
   DBText3.DataField := 'price';
   DBText4.DataField := 'component';
   ADOQuery1.Open;
-  result:=ADOQuery1;
+  result:=ADOQuery1;   }
 end;
 
 constructor MyStore.create;
@@ -253,27 +259,6 @@ begin
     ' OR element.idelement=configuration.col8 OR element.idelement=configuration.col9 OR element.idelement=configuration.col10 ',
     ' OR element.idelement=configuration.col11 OR element.idelement=configuration.col12 OR element.idelement=configuration.col13) ',
     ' AND configuration.idconfiguration='+idconfiguration+' ORDER BY idelement  ) AS ACTION ;', '', '', ADOQuery2, DataSource2);
-
-    {
-    ADOQuery2.Connection:=ADOConnection1;
-    ADOQuery2.Close;
-    ADOQuery2.SQL.Clear;
-    ADOQuery2.SQL.Add('SELECT SUM(price) FROM ( ');
-    ADOQuery2.SQL.Add
-      ('SELECT element.component, element.idelement, element.price, element.description FROM element, configuration  WHERE (element.idelement=configuration.col1');
-    ADOQuery2.SQL.Add
-      ('OR element.idelement=configuration.col2 OR element.idelement=configuration.col3 OR element.idelement=configuration.col4');
-    ADOQuery2.SQL.Add
-      ('OR element.idelement=configuration.col5 OR element.idelement=configuration.col6 OR element.idelement=configuration.col7');
-    ADOQuery2.SQL.Add
-      ('OR element.idelement=configuration.col8 OR element.idelement=configuration.col9 OR element.idelement=configuration.col10');
-    ADOQuery2.SQL.Add
-      ('OR element.idelement=configuration.col11 OR element.idelement=configuration.col12 OR element.idelement=configuration.col13)');
-    ADOQuery2.SQL.Add
-      ('AND configuration.idconfiguration=1234 ORDER BY idelement  ) AS ACTION ;');
-    DBText5.DataField := 'SUM(price)';
-    ADOQuery2.Open;
-    result:=ADOQuery2;  }
 end;
 
 function MyStore.SelectSumOfficeEconom(ADOQuery2: TADOQuery; DBText5: TDBText;
