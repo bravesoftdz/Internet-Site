@@ -16,21 +16,22 @@ type
   private
     privateCaptionStore: string;
     ADOConnection1: TADOConnection;
-    ADOQuery2: TADOQuery;
-    DataSource2: TDataSource;
+    ADOQuery1, ADOQuery2, ADOQuery3, ADOQuery4: TADOQuery;
+    DataSource1, DataSource2, DataSource3, DataSource4: TDataSource;
     procedure Set—aptionStore(Value: string);
     function Get—aptionStore: string;
   public
-    MyLabel: TLabel;
-    MyADOQuery: TADOQuery;
+    //MyLabel: TLabel;
+    //MyADOQuery: TADOQuery;
     function GetADOConnection1: TADOConnection;
     function GetDataSource(ExecSQL1, SQL2, SQL3, SQL4, SQL5, SQL6, SQL7, SQL8,
           SQL9, SQL10: string; ADOQuery: TADOQuery; DataSource: TDataSource)
           : TDataSource;
     property Caption: string read Get—aptionStore write Set—aptionStore;
-    function CreateStoreForm(Label1: TLabel; ADOQuery1: TADOQuery;
+    function CreateStoreForm(idconfiguration: string): TDataSource;
+    {(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource): TADOQuery;
+          DataSource1: TDataSource): TADOQuery;  }
     function SelectCconfigurationOfficeEconom(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
           DataSource1: TDataSource): TADOQuery;
@@ -107,13 +108,22 @@ begin
 end;
 
 
-function MyStore.CreateStoreForm(Label1: TLabel; ADOQuery1: TADOQuery;
+function MyStore.CreateStoreForm(idconfiguration: string): TDataSource;
+{(Label1: TLabel; ADOQuery1: TADOQuery;
           DBText1: TDBText; DBText2: TDBText; DBText3: TDBText; DBText4: TDBText;
-          DataSource1: TDataSource): TADOQuery;
+          DataSource1: TDataSource): TADOQuery; }
 begin
-  Label1.Caption:=' ŒÕ‘»√”–¿“Œ– —»—“≈ÃÕŒ√Œ ¡ÀŒ ¿';
-  MyLabel.Free;
-
+  //Label1.Caption:=' ŒÕ‘»√”–¿“Œ– —»—“≈ÃÕŒ√Œ ¡ÀŒ ¿';
+  //MyLabel.Free;
+  result := GetDataSource
+    ('UPDATE configuration SET idconfiguration=1234 WHERE idconfiguration=1234',
+    ' SELECT configuration.sum, element.component, element.idelement, element.price, element.component, element.description FROM element, configuration  WHERE (element.idelement=configuration.col1 ',
+    ' OR element.idelement=configuration.col2 OR element.idelement=configuration.col3 OR element.idelement=configuration.col4 ',
+    ' OR element.idelement=configuration.col5 OR element.idelement=configuration.col6 OR element.idelement=configuration.col7 ',
+    ' OR element.idelement=configuration.col8 OR element.idelement=configuration.col9 OR element.idelement=configuration.col10 ',
+    ' OR element.idelement=configuration.col11 OR element.idelement=configuration.col12 OR element.idelement=configuration.col13) ',
+    ' AND configuration.idconfiguration='+idconfiguration+' ORDER BY idelement; ', '', '', '', ADOQuery1, DataSource1);
+  {
   MyLabel:= Label1;
   ADOQuery1.Connection:=ADOConnection1;
   ADOQuery1.Close;
@@ -135,8 +145,7 @@ begin
   DBText3.DataField := 'price';
   DBText4.DataField := 'component';
   ADOQuery1.Open;
-  //MyADOQuery:= ADOQuery1;
-  result:=ADOQuery1;
+  result:=ADOQuery1; }
 end;
 
 function MyStore.GetADOConnection1: TADOConnection;

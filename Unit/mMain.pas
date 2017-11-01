@@ -107,15 +107,16 @@ procedure TMain.FormCreate(Sender: TObject);
 begin
   store:=MyStore.Create;
   //ADOQuery1:=store.CreateStoreForm(Label1, ADOQuery1, DBText1, DBText2, DBText3, DBText4, DataSource1);
-    //DBCtrlGrid1.DataSource := store.CleanAndSelectConfiguration('1234');
+    Label1.Caption:=' ŒÕ‘»√”–¿“Œ– —»—“≈ÃÕŒ√Œ ¡ÀŒ ¿';
+
+    DBCtrlGrid1.DataSource := store.CreateStoreForm('1234');
     DBText1.DataField := 'description';
     DBText2.DataField := 'idelement';
     DBText3.DataField := 'price';
     DBText4.DataField := 'component';
-
     DBText5.DataSource := store.SelectSum('1234');
     DBText5.DataField := 'SUM(price)';
-  Label1:=store.MyLabel;
+ // Label1:=store.MyLabel;
 end;
 
 end.

@@ -139,6 +139,7 @@ object Main: TMain
     PanelWidth = 444
     TabOrder = 2
     OnClick = DBCtrlGrid1Click
+    ExplicitLeft = 6
     object DBText1: TDBText
       Left = 12
       Top = 12
