@@ -7,7 +7,7 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCGrids, Vcl.StdCtrls,
   Vcl.ExtCtrls, Model,
-  Data.DB, Data.Win.ADODB, Vcl.DBCtrls;
+  Data.DB, Data.Win.ADODB, Vcl.DBCtrls, UMagazine;
 
 type
   TMain = class(TForm)
@@ -34,13 +34,13 @@ type
     procedure Button3Click(Sender: TObject);
 
   private
-    { Private declarations }
+    Magazine: TMagazine;
+
   public
     { Public declarations }
   end;
 
 var
-  Main: TMain;
   store: MyStore;
 
 implementation
@@ -85,12 +85,18 @@ end;
 
 procedure TMain.FormCreate(Sender: TObject);
 begin
-  store := MyStore.Create;
-  ADOQuery1 := store.CreateStoreForm(Label1, ADOQuery1, DBText1, DBText2,
+  {
+    store := MyStore.Create;
+    ADOQuery1 := store.CreateStoreForm(Label1, ADOQuery1, DBText1, DBText2,
     DBText3, DBText4, DataSource1);
-  DBText5.DataSource := store.SelectSum('1234');
-  DBText5.DataField := 'SUM(price)';
-  Label1 := store.MyLabel;
+    DBText5.DataSource := store.SelectSum('1234');
+    DBText5.DataField := 'SUM(price)';
+    Label1 := store.MyLabel;
+  }
+  Magazine := TMagazine.create;
+  self.Caption := Magazine.Caption;
+  Label1.Caption := Magazine.Caption;
+  Label3.Caption := Magazine.money;
 end;
 
 end.

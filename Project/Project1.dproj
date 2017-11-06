@@ -88,6 +88,17 @@
 				<FormType>dfm</FormType>
 			</DCCReference>
 			<DCCReference Include="..\Unit\Model.pas"/>
+			<DCCReference Include="..\Unit\UMagazine.pas"/>
+			<DCCReference Include="..\Unit\UConnection.pas"/>
+			<DCCReference Include="..\Unit\UProduct.pas"/>
+			<DCCReference Include="..\Unit\UComponent.pas"/>
+			<DCCReference Include="..\Unit\UConfiguration.pas"/>
+			<DCCReference Include="..\Unit\UComputer.pas"/>
+			<DCCReference Include="..\Unit\UWebPage.pas"/>
+			<DCCReference Include="..\Unit\Unit1.pas">
+				<Form>Form1</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
 			<None Include="ModelSupport_Project1\default.txaPackage"/>
 			<None Include="ModelSupport_Project1\default.txvpck"/>
 			<None Include="ModelSupport_Project1\Model\default.txvpck"/>
@@ -95,6 +106,8 @@
 			<None Include="ModelSupport_Project1\Model\default.txaPackage"/>
 			<None Include="ModelSupport_Project1\mMain\default.txvpck"/>
 			<None Include="ModelSupport_Project1\mMain\default.txaPackage"/>
+			<None Include="ModelSupport_Project1\UMagazine\default.txvpck"/>
+			<None Include="ModelSupport_Project1\UMagazine\default.txaPackage"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
