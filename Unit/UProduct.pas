@@ -2,30 +2,50 @@ unit UProduct;
 
 interface
 
-uses
-
-  UComponent;
-
 type
   TProduct = class
   private
-    description: string;
-    idelement: integer;
-    price: integer;
-    component: TComponent;
+    fName: string;
+    fPrice: integer;
+    procedure SetName(Value: string);
+    function GetName: string;
+    procedure SetPrice(Value: integer);
+    function GetPrice: integer;
+  public
+    property Name: string read GetName write SetName;
+    property Price: integer read GetPrice write SetPrice;
   published
-    constructor create(description: string; price: integer;
-      component: TComponent);
+    constructor create(Name: string; Price: integer);
   end;
 
 implementation
 
 { TProduct }
 
-constructor TProduct.create(description: string; price: integer;
-  component: TComponent);
+constructor TProduct.create(Name: string; Price: integer);
 begin
+  fName := Name;
+  fPrice := Price;
+end;
 
+function TProduct.GetName: string;
+begin
+  result := fName;
+end;
+
+function TProduct.GetPrice: integer;
+begin
+  result := fPrice;
+end;
+
+procedure TProduct.SetName(Value: string);
+begin
+  fName := Value;
+end;
+
+procedure TProduct.SetPrice(Value: integer);
+begin
+  fPrice := Value;
 end;
 
 end.

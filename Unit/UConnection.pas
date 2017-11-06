@@ -32,13 +32,13 @@ begin
   if not Assigned(ADOConnection1) then
   begin
     ADOConnection1 := TADOConnection.create(nil);
-    ADOConnection1.ConnectionString := 'Provider=MSDASQL.1;Password=' + Password
-      + ';Persist Security Info=True;User ID=' + Login +
+    ADOConnection1.ConnectionString := 'Provider=MSDASQL.1;Password=' + self.Password
+      + ';Persist Security Info=True;User ID=' + self.Login +
       ';Extended Properties="DRIVER={MySQL ODBC 5.3 Unicode Driver};UID=' +
-      Login + ';PWD=' + Password + ';SERVER=' + SERVER + ';DATABASE=' + DATABASE
-      + ';PORT=' + PORT + ';COLUMN_SIZE_S32=1;";Initial Catalog=' + DATABASE;
-    // ADOConnection1.LoginPrompt := false;
+      Login + ';PWD=' + self.Password + ';SERVER=' + self.SERVER + ';DATABASE=' + self.DATABASE
+      + ';PORT=' + self.PORT + ';COLUMN_SIZE_S32=1;";Initial Catalog=' + self.DATABASE;
     ADOConnection1.Connected := true;
+    ADOConnection1.LoginPrompt := false;
   end;
 end;
 
@@ -47,11 +47,11 @@ constructor TConnection.create(Password: string; Login: string; SERVER: string;
 begin
   if not Assigned(ADOConnection1) then
   begin
-    Password := Password;
-    Login := Login;
-    SERVER := SERVER;
-    DATABASE := DATABASE;
-    PORT := PORT;
+    self.Password := Password;
+    self.Login := Login;
+    self.SERVER := SERVER;
+    self.DATABASE := DATABASE;
+    self.PORT := PORT;
   end;
 end;
 

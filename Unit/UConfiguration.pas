@@ -9,6 +9,7 @@ type
   TConfiguration = class
   private
     name: string;
+    /// <link>aggregation</link>
     fProcessor: TProcessor;
     fCooling: TCooling;
     fMotherBoard: TMotherBoard;
@@ -19,6 +20,7 @@ type
     procedure SetMotherBoard(MotherBoard: TMotherBoard);
     function GetMotherBoard: TMotherBoard;
   public
+    /// <link>aggregation</link>
     property Processor: TProcessor read GetProcessor write SetProcessor;
     property Cooling: TCooling read GetCooling write SetCooling;
     property MotherBoard: TMotherBoard read GetMotherBoard write SetMotherBoard;

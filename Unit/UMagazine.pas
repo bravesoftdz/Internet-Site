@@ -3,16 +3,18 @@ unit UMagazine;
 interface
 
 uses
-  UConnection, UWebPage;
+  UConnection, UComputer;
 
 type
   TMagazine = class
   private
     /// <link>aggregation</link>
     Connection: TConnection;
+    /// <link>aggregation</link>
+    Computer: TComputer;
   public
     Caption: string;
-    money: string;
+
   published
     constructor create;
   end;
@@ -27,7 +29,7 @@ begin
     'store', '3306');
   Connection.install;
   Caption := 'Конфигуратор системного блока';
-  money := ' руб.';
+
 end;
 
 end.

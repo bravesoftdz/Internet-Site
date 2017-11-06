@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="tvjh80l3k0h_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Project1:UWebPage.TWebPage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="40,20,95,101" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UWebPage.TWebPage.Form1" />
+      <reference referencedUin="delphi:e_method:src:Project1:UWebPage.TWebPage.create()" />
+      <reference referencedUin="delphi:l_ast:src:Project1:UWebPage.TWebPage.Form1">
+        <property name="sourceAnchor" value="87,121" />
+        <property name="targetAnchor" value="87,180" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UWebPage.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.TForm1">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,180,143,490" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Magazine" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel1" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel2" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel3" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel4" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel5" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel6" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel7" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel8" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel9" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel10" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel11" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel12" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Panel13" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Label1" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Label2" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Button2" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LPriceComputer" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LMoney" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LPrice" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LCaption" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.PHeader" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.PSideBar" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.ScrollBox1" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.Button1" />
+      <reference referencedUin="delphi:e_method:src:Project1:Unit1.TForm1.Button1Click(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:Project1:Unit1.TForm1.create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:l_ast:src:Project1:Unit1.TForm1.Magazine">
+        <property name="sourceAnchor" value="163,245" />
+        <property name="targetAnchor" value="260,245" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UMagazine.TMagazine">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="260,180,149,131" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UMagazine.TMagazine.Connection" />
+      <reference referencedUin="delphi:e_field:src:Project1:UMagazine.TMagazine.Computer" />
+      <reference referencedUin="delphi:e_field:src:Project1:UMagazine.TMagazine.Caption" />
+      <reference referencedUin="delphi:e_method:src:Project1:UMagazine.TMagazine.create()" />
+      <reference referencedUin="delphi:l_ast:src:Project1:UMagazine.TMagazine.Connection">
+        <property name="sourceAnchor" value="334,311" />
+        <property name="targetAnchor" value="334,460" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project1:UMagazine.TMagazine.Computer">
+        <property name="sourceAnchor" value="334,180" />
+        <property name="targetAnchor" value="334,119" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UConnection.TConnection">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="240,460,209,206" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConnection.TConnection.ADOConnection1" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConnection.TConnection.Password" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConnection.TConnection.Login" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConnection.TConnection.SERVER" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConnection.TConnection.DATABASE" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConnection.TConnection.PORT" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConnection.TConnection.Get()" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConnection.TConnection.install()" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConnection.TConnection.create(System.string,System.string,System.string,System.string,System.string)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UComputer.TComputer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="240,20,204,99" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TComputer.SetConfiguration(UConfiguration.TConfiguration)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TComputer.GetConfiguration()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UComponent.TComponent">
+      <property name="$shortcutReference" value="true" />
+      <property name="$hidden" value="True" />
+      <property name="bounds" value="889,124,167,69" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComponent.TComponent.SetProduct(UProduct.TProduct)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComponent.TComponent.GetProduct()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UConfiguration.TConfiguration">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="760,100,190,283" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConfiguration.TConfiguration.name" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConfiguration.TConfiguration.fProcessor" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConfiguration.TConfiguration.fCooling" />
+      <reference referencedUin="delphi:e_field:src:Project1:UConfiguration.TConfiguration.fMotherBoard" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConfiguration.TConfiguration.SetProcessor(UComponent.TProcessor)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConfiguration.TConfiguration.GetProcessor()" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConfiguration.TConfiguration.SetCooling(UComponent.TCooling)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConfiguration.TConfiguration.GetCooling()" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConfiguration.TConfiguration.SetMotherBoard(UComponent.TMotherBoard)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConfiguration.TConfiguration.GetMotherBoard()" />
+      <reference referencedUin="delphi:e_property:src:Project1:UConfiguration.TConfiguration.Processor" />
+      <reference referencedUin="delphi:e_property:src:Project1:UConfiguration.TConfiguration.Cooling" />
+      <reference referencedUin="delphi:e_property:src:Project1:UConfiguration.TConfiguration.MotherBoard" />
+      <reference referencedUin="delphi:e_method:src:Project1:UConfiguration.TConfiguration.create(System.string)" />
+      <reference referencedUin="delphi:l_ast:src:Project1:UConfiguration.TConfiguration.fProcessor">
+        <property name="sourceAnchor" value="821,383" />
+        <property name="targetAnchor" value="821,440" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project1:UConfiguration.TConfiguration.Processor">
+        <property name="sourceAnchor" value="829,383" />
+        <property name="targetAnchor" value="829,440" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UComputer.TServer">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,20,204,116" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UComputer.TServer.fConfiguration" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TServer.SetConfiguration(UConfiguration.TConfiguration)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TServer.GetConfiguration()" />
+      <reference referencedUin="delphi:l_gnt:src:Project1:UComputer.TServer:UComputer.TComputer">
+        <property name="sourceAnchor" value="500,69" />
+        <property name="targetAnchor" value="444,69" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project1:UComputer.TServer.fConfiguration">
+        <property name="sourceAnchor" value="704,118" />
+        <property name="targetAnchor" value="760,118" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UComputer.TPortable">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,180,204,116" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UComputer.TPortable.fConfiguration" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TPortable.SetConfiguration(UConfiguration.TConfiguration)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TPortable.GetConfiguration()" />
+      <reference referencedUin="delphi:l_gnt:src:Project1:UComputer.TPortable:UComputer.TComputer">
+        <property name="sourceAnchor" value="512,180" />
+        <property name="targetAnchor" value="418,119" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project1:UComputer.TPortable.fConfiguration">
+        <property name="sourceAnchor" value="704,239" />
+        <property name="targetAnchor" value="760,239" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UComputer.TDesktop">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="480,340,204,116" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UComputer.TDesktop.fConfiguration" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TDesktop.SetConfiguration(UConfiguration.TConfiguration)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComputer.TDesktop.GetConfiguration()" />
+      <reference referencedUin="delphi:l_gnt:src:Project1:UComputer.TDesktop:UComputer.TComputer">
+        <property name="sourceAnchor" value="539,340" />
+        <property name="targetAnchor" value="378,119" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project1:UComputer.TDesktop.fConfiguration">
+        <property name="sourceAnchor" value="684,361" />
+        <property name="targetAnchor" value="760,361" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:view:::5iggrh7wum_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="$hidden" value="True" />
+      <property name="bounds" value="880,440,100,121" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TMotherBoard" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TCooling" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TProcessor" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TComponent" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.@unitclass" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UComponent.TProcessor">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="740,440,159,133" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UComponent.TProcessor.fProduct" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComponent.TProcessor.SetProduct(UProduct.TProduct)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UComponent.TProcessor.GetProduct()" />
+      <reference referencedUin="delphi:e_property:src:Project1:UComponent.TProcessor.Product" />
+      <reference referencedUin="delphi:l_gnt:src:Project1:UComponent.TProcessor:UComponent.TComponent">
+        <property name="sourceAnchor" value="0,0" />
+        <property name="targetAnchor" value="0,0" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project1:UComponent.TProcessor.Product">
+        <property name="sourceAnchor" value="899,498" />
+        <property name="targetAnchor" value="980,498" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project1:UComponent.TProcessor.fProduct">
+        <property name="sourceAnchor" value="899,506" />
+        <property name="targetAnchor" value="980,506" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:UProduct.TProduct">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="980,420,124,208" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:UProduct.TProduct.fName" />
+      <reference referencedUin="delphi:e_field:src:Project1:UProduct.TProduct.fPrice" />
+      <reference referencedUin="delphi:e_method:src:Project1:UProduct.TProduct.SetName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UProduct.TProduct.GetName()" />
+      <reference referencedUin="delphi:e_method:src:Project1:UProduct.TProduct.SetPrice(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:Project1:UProduct.TProduct.GetPrice()" />
+      <reference referencedUin="delphi:e_property:src:Project1:UProduct.TProduct.Name" />
+      <reference referencedUin="delphi:e_property:src:Project1:UProduct.TProduct.Price" />
+      <reference referencedUin="delphi:e_method:src:Project1:UProduct.TProduct.create(System.string,System.Integer)" />
+    </reference>
+    <reference referencedUin="design:view:::6j0hwkhnkrh_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="$hidden" value="True" />
+      <property name="bounds" value="980,160,100,121" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_class:src:Project1:UProduct.TProduct" />
+      <reference referencedUin="delphi:e_class:src:Project1:UProduct.@unitclass" />
+    </reference>
+  </view>
+</nodeSet>

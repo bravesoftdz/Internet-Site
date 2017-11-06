@@ -136,7 +136,7 @@ object Main: TMain
     Align = alClient
     DataSource = DataSource1
     PanelHeight = 75
-    PanelWidth = 444
+    PanelWidth = 443
     TabOrder = 2
     OnClick = DBCtrlGrid1Click
     object DBText1: TDBText

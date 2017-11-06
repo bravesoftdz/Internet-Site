@@ -3,42 +3,45 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  UMagazine;
 
 type
   TForm1 = class(TForm)
 
-    ScrollBox1: TScrollBox;
-    Panel11: TPanel;
-    Panel13: TPanel;
-    Panel12: TPanel;
-    Panel1: TPanel;
-    Panel10: TPanel;
-    Panel9: TPanel;
-    Panel8: TPanel;
-    Panel7: TPanel;
-    Panel6: TPanel;
-    Panel5: TPanel;
-    Panel4: TPanel;
-    Panel3: TPanel;
-    Panel2: TPanel;
-
-
-    captionSidebar: TLabel;
-    //captionHeader: TLabel;
   private
-    header: TPanel;
-    sidebar: TPanel;
-
+    /// <link>aggregation</link>
+    Magazine: TMagazine;
   public
-    procedure setHeader(Align: TAlign; Left: integer; Top: integer; Width: integer; Height: integer; TabOrder: Smallint);
-    procedure setSidebar(Align: TAlign; Left: integer; Top: integer; Width: integer; Height: integer; TabOrder: Smallint);
+  published
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Panel8: TPanel;
+    Panel9: TPanel;
+    Panel10: TPanel;
+    Panel11: TPanel;
+    Panel12: TPanel;
+    Panel13: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Button2: TButton;
+    LPriceComputer: TLabel;
+    LMoney: TLabel;
+    LPrice: TLabel;
+    LCaption: TLabel;
+    PHeader: TPanel;
+    PSideBar: TPanel;
+    ScrollBox1: TScrollBox;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+    constructor create(AOwner: TComponent); override;
   end;
-
-var
-  Form1: TForm1;
 
 implementation
 
@@ -46,26 +49,19 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.setHeader(Align: TAlign; Left, Top, Width, Height: integer;
-  TabOrder: Smallint);
+procedure TForm1.Button1Click(Sender: TObject);
 begin
-  header.Align := Align;
-  header.Left := Left;
-  header.Top := Top;
-  header.Width := Width;
-  header.Height := Height;
-  header.TabOrder := TabOrder;
+  //Magazine.Caption
 end;
 
-procedure TForm1.setSidebar(Align: TAlign; Left, Top, Width, Height: integer;
-  TabOrder: Smallint);
+
+constructor TForm1.create(AOwner: TComponent);
 begin
-  sidebar.Align := Align;
-  sidebar.Left := Left;
-  sidebar.Top := Top;
-  sidebar.Width := Width;
-  sidebar.Height := Height;
-  sidebar.TabOrder := TabOrder;
+  inherited;
+  Magazine := TMagazine.create;
+  self.Caption := Magazine.Caption;
+  LCaption.Caption := Magazine.Caption;
+  Label1.Caption := '';
 end;
 
 end.

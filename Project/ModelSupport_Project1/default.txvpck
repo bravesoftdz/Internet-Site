@@ -4,5 +4,76 @@
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
+    <reference referencedUin="design:view:::6gueihrbf0s_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,100,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:mMain.TMain" />
+      <reference referencedUin="delphi:e_class:src:Project1:mMain.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::u0cjc1c6a8q_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="129,1,138,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:UConfiguration.TConfiguration" />
+      <reference referencedUin="delphi:e_class:src:Project1:UConfiguration.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::crr47suw4vq_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="129,171,101,134" />
+      <reference referencedUin="delphi:e_class:src:Project1:Project1.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::cwyk07muz0p_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="305,1,118,196" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComputer.TServer" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComputer.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComputer.TPortable" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComputer.TComputer" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComputer.TDesktop" />
+    </reference>
+    <reference referencedUin="design:view:::gjinj1ekywg_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="461,1,127,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:UConnection.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:Project1:UConnection.TConnection" />
+    </reference>
+    <reference referencedUin="design:view:::5iggrh7wum_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="286,216,128,196" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TMotherBoard" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TCooling" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TProcessor" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.TComponent" />
+      <reference referencedUin="delphi:e_class:src:Project1:UComponent.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::tvjh80l3k0h_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="167,343,118,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:UWebPage.TWebPage" />
+      <reference referencedUin="delphi:e_class:src:Project1:UWebPage.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::zpvvqqt47pq_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,180,100,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:Unit1.TForm1" />
+      <reference referencedUin="delphi:e_class:src:Project1:Unit1.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::6j0hwkhnkrh_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="58,369,107,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:UProduct.TProduct" />
+      <reference referencedUin="delphi:e_class:src:Project1:UProduct.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::rhf0kzw8q1j3vmdhj_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="461,171,100,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:Model.MyStore" />
+      <reference referencedUin="delphi:e_class:src:Project1:Model.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::pevsoivuqmh_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="461,341,118,151" />
+      <reference referencedUin="delphi:e_class:src:Project1:UMagazine.TMagazine" />
+      <reference referencedUin="delphi:e_class:src:Project1:UMagazine.@unitclass" />
+    </reference>
   </view>
 </nodeSet>

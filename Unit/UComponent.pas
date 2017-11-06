@@ -3,146 +3,78 @@ unit UComponent;
 interface
 
 uses
-  UConnection;
+  UProduct;
 
 type
   TComponent = class
   private
-    procedure SetName(Value: string); virtual; abstract;
-    function GetName: string; virtual; abstract;
-    procedure SetPrice(Value: integer); virtual; abstract;
-    function GetPrice: integer; virtual; abstract;
-  published
-    constructor create(Name: string; Price: integer); virtual; abstract;
+    procedure SetProduct(Value: TProduct); virtual; abstract;
+    function GetProduct: TProduct; virtual; abstract;
   end;
 
   TProcessor = class(TComponent)
   private
-    fName: string;
-    fPrice: integer;
-    procedure SetName(Value: string); override;
-    function GetName: string; override;
-    procedure SetPrice(Value: integer); override;
-    function GetPrice: integer; override;
+    fProduct: TProduct;
+    procedure SetProduct(Value: TProduct); override;
+    function GetProduct: TProduct; override;
   public
-    property Name: string read GetName write SetName;
-    property Price: integer read GetPrice write SetPrice;
-  published
-    constructor create(Name: string; Price: integer); override;
+    property Product: TProduct read GetProduct write SetProduct;
   end;
 
   TCooling = class(TComponent)
   private
-    fName: string;
-    fPrice: integer;
-    procedure SetName(Value: string); override;
-    function GetName: string; override;
-    procedure SetPrice(Value: integer); override;
-    function GetPrice: integer; override;
+    fProduct: TProduct;
+    procedure SetProduct(Value: TProduct); override;
+    function GetProduct: TProduct; override;
   public
-    property Name: string read GetName write SetName;
-    property Price: integer read GetPrice write SetPrice;
-  published
-    constructor create(Name: string; Price: integer); override;
+    property Product: TProduct read GetProduct write SetProduct;
   end;
 
   TMotherBoard = class(TComponent)
   private
-    fName: string;
-    fPrice: integer;
-    procedure SetName(Value: string); override;
-    function GetName: string; override;
-    procedure SetPrice(Value: integer); override;
-    function GetPrice: integer; override;
+    fProduct: TProduct;
+    procedure SetProduct(Value: TProduct); override;
+    function GetProduct: TProduct; override;
   public
-    property Name: string read GetName write SetName;
-    property Price: integer read GetPrice write SetPrice;
-  published
-    constructor create(Name: string; Price: integer); override;
+    property Product: TProduct read GetProduct write SetProduct;
   end;
 
 implementation
 
 { TProcessor }
 
-constructor TProcessor.create(Name: string; Price: integer);
+function TProcessor.GetProduct: TProduct;
 begin
-  fName := Name;
-  fPrice := Price;
+  result := fProduct;
 end;
 
-function TProcessor.GetName: string;
+procedure TProcessor.SetProduct(Value: TProduct);
 begin
-  result := fName;
-end;
-
-function TProcessor.GetPrice: integer;
-begin
-  result := fPrice;
-end;
-
-procedure TProcessor.SetName(Value: string);
-begin
-  //
-end;
-
-procedure TProcessor.SetPrice(Value: integer);
-begin
-  //
+  fProduct := Value;
 end;
 
 { TCooling }
 
-constructor TCooling.create(Name: string; Price: integer);
+function TCooling.GetProduct: TProduct;
 begin
-
+  result := fProduct;
 end;
 
-function TCooling.GetName: string;
+procedure TCooling.SetProduct(Value: TProduct);
 begin
-
-end;
-
-function TCooling.GetPrice: integer;
-begin
-
-end;
-
-procedure TCooling.SetName(Value: string);
-begin
-
-end;
-
-procedure TCooling.SetPrice(Value: integer);
-begin
-
+  fProduct := Value;
 end;
 
 { TMotherBoard }
 
-constructor TMotherBoard.create(Name: string; Price: integer);
+function TMotherBoard.GetProduct: TProduct;
 begin
-
+  result := fProduct;
 end;
 
-function TMotherBoard.GetName: string;
+procedure TMotherBoard.SetProduct(Value: TProduct);
 begin
-
-end;
-
-function TMotherBoard.GetPrice: integer;
-begin
-
-end;
-
-procedure TMotherBoard.SetName(Value: string);
-begin
-
-end;
-
-procedure TMotherBoard.SetPrice(Value: integer);
-begin
-
+  fProduct := Value;
 end;
 
 end.

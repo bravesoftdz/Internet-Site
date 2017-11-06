@@ -18,14 +18,16 @@ uses
 var
   Main: TMain;
   WebPage: TWebPage;
+  Magazine: TMagazine;
 begin
   WebPage := TWebPage.create;
+  //Magazine := TMagazine.create;
   {
-  Application.Initialize;
-  Application.MainFormOnTaskbar := True;
-  // Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TMain, Main);
-  Application.CreateForm(TForm1, Form1);
-  Application.Run;
+    Application.Initialize;
+    Application.MainFormOnTaskbar := True;
+    // Application.CreateForm(TForm1, Form1);
+    Application.CreateForm(TMain, Main);
+    Application.CreateForm(TForm1, Form1);
+    Application.Run;
   }
 end.

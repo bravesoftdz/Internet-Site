@@ -96,7 +96,7 @@ begin
   Magazine := TMagazine.create;
   self.Caption := Magazine.Caption;
   Label1.Caption := Magazine.Caption;
-  Label3.Caption := Magazine.money;
+  //Label3.Caption := Magazine.money;
 end;
 
 end.
