@@ -12,10 +12,10 @@ type
   private
     /// <link>aggregation</link>
     WebPage: TWebPage;
-    PCaption, PSideBar: TPanel;
-    LCaption, LNamePrice, LPrice, LMoney: TLabel;
+    PCaption, PSideBar, PDdr, PProcessor, PMb: TPanel;
+    LCaption, LNamePrice, LPrice, LMoney, LDdr, LProcessor, LMb: TLabel;
     BCollect, BClean: TButton;
-    SB: TScrollBox;
+    SBComputer: TScrollBox;
   public
     { Public declarations }
   published
@@ -34,8 +34,8 @@ constructor TForm1.create(AOwner: TComponent);
 begin
   inherited;
   WebPage := TWebPage.create
-    ('Конфигуратор системного блока', TComputer.create(TConfiguration.create(TDdr.create('description'),
-    TProcessor.create('description'), TMb.create('description'))),'Стоимость компьютера','0',' руб.');
+    ('Конфигуратор системного блока', TComputer.create(TConfiguration.create(TDdr.create('TDdr description'),
+    TProcessor.create('TProcessor description'), TMb.create('TMb description'))),'Стоимость компьютера','0',' руб.');
   Form1.Caption := WebPage.GetCaption;
 
   PCaption := TPanel.Create(nil);
@@ -82,6 +82,40 @@ begin
   BCollect.Top := 48;
   BCollect.Parent := PSideBar;
   BCollect.Caption := 'Собрать';
+
+  SBComputer := TScrollBox.Create(nil);
+  SBComputer.Align := alClient;
+  SBComputer.Parent := Form1;
+
+  PDdr := TPanel.Create(nil);
+  PDdr.Align := alTop;
+  PDdr.Parent := SBComputer;
+
+  LDdr := TLabel.Create(nil);
+  LDdr.Left := 8;
+  LDdr.Top := 8;
+  LDdr.Parent := PDdr;
+  LDdr.Caption := WebPage.GetComputer.GetConfiguration.GetDdr.Description;
+
+  PProcessor := TPanel.Create(nil);
+  PProcessor.Align := alTop;
+  PProcessor.Parent := SBComputer;
+
+  LProcessor := TLabel.Create(nil);
+  LProcessor.Left := 8;
+  LProcessor.Top := 8;
+  LProcessor.Parent := PProcessor;
+  LProcessor.Caption := WebPage.GetComputer.GetConfiguration.GetProcessor.Description;
+
+  PMb := TPanel.Create(nil);
+  PMb.Align := alTop;
+  PMb.Parent := SBComputer;
+
+  LMb := TLabel.Create(nil);
+  LMb.Left := 8;
+  LMb.Top := 8;
+  LMb.Parent := PMb;
+  LMb.Caption := WebPage.GetComputer.GetConfiguration.GetMb.Description;
 end;
 
 end.
