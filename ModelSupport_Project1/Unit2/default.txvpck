@@ -13,14 +13,14 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:Project1:Unit2.TComputer">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="180,0,204,116" />
+      <property name="bounds" value="180,20,204,116" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_field:src:Project1:Unit2.TComputer.fConfiguration" />
       <reference referencedUin="delphi:e_method:src:Project1:Unit2.TComputer.GetConfiguration()" />
       <reference referencedUin="delphi:e_method:src:Project1:Unit2.TComputer.create(Unit2.TConfiguration)" />
       <reference referencedUin="delphi:l_ast:src:Project1:Unit2.TComputer.fConfiguration">
-        <property name="sourceAnchor" value="289,116" />
-        <property name="targetAnchor" value="289,136" />
+        <property name="sourceAnchor" value="282,136" />
+        <property name="targetAnchor" value="282,160" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -40,8 +40,8 @@
       <reference referencedUin="delphi:e_method:src:Project1:Unit2.TWebPage.GetMoney()" />
       <reference referencedUin="delphi:e_method:src:Project1:Unit2.TWebPage.create(System.string,Unit2.TComputer,System.string,System.string,System.string)" />
       <reference referencedUin="delphi:l_ast:src:Project1:Unit2.TWebPage.fComputer">
-        <property name="sourceAnchor" value="500,68" />
-        <property name="targetAnchor" value="384,68" />
+        <property name="sourceAnchor" value="500,78" />
+        <property name="targetAnchor" value="384,78" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -50,7 +50,8 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:Project1:Unit2.TConfiguration">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="205,136,168,176" />
+      <property name="bounds" value="200,160,168,176" />
+      <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_field:src:Project1:Unit2.TConfiguration.fDdr" />
       <reference referencedUin="delphi:e_field:src:Project1:Unit2.TConfiguration.fProcessor" />
       <reference referencedUin="delphi:e_field:src:Project1:Unit2.TConfiguration.fMb" />
@@ -59,18 +60,18 @@
       <reference referencedUin="delphi:e_method:src:Project1:Unit2.TConfiguration.GetMb()" />
       <reference referencedUin="delphi:e_method:src:Project1:Unit2.TConfiguration.create(Unit2.TDdr,Unit2.TProcessor,Unit2.TMb)" />
       <reference referencedUin="delphi:l_ast:src:Project1:Unit2.TConfiguration.fDdr">
-        <property name="sourceAnchor" value="301,312" />
+        <property name="sourceAnchor" value="301,336" />
         <property name="targetAnchor" value="301,360" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:Project1:Unit2.TConfiguration.fProcessor">
-        <property name="sourceAnchor" value="205,286" />
-        <property name="targetAnchor" value="142,286" />
+        <property name="sourceAnchor" value="200,298" />
+        <property name="targetAnchor" value="142,298" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:Project1:Unit2.TConfiguration.fMb">
-        <property name="sourceAnchor" value="373,296" />
-        <property name="targetAnchor" value="420,296" />
+        <property name="sourceAnchor" value="368,308" />
+        <property name="targetAnchor" value="420,308" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -110,6 +111,34 @@
       <reference referencedUin="delphi:l_gnt:src:Project1:Unit2.TDdr:Unit2.TComponents">
         <property name="sourceAnchor" value="321,476" />
         <property name="targetAnchor" value="321,560" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project1:Unit1.TForm1">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="940,20,161,355" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.WebPage" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.PCaption" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.PSideBar" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.PDdr" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.PProcessor" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.PMb" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LCaption" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LNamePrice" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LPrice" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LMoney" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LDdr" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LProcessor" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.LMb" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.BCollect" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.BClean" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.SBComputer" />
+      <reference referencedUin="delphi:e_field:src:Project1:Unit1.TForm1.DBGComponents" />
+      <reference referencedUin="delphi:e_method:src:Project1:Unit1.TForm1.create(System.Classes.TComponent)" />
+      <reference referencedUin="delphi:l_ast:src:Project1:Unit1.TForm1.WebPage">
+        <property name="sourceAnchor" value="940,138" />
+        <property name="targetAnchor" value="666,138" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>

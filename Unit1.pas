@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, unit2, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, unit2, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.Grids, Vcl.DBGrids;
 
 type
   TForm1 = class(TForm)
@@ -16,6 +17,7 @@ type
     LCaption, LNamePrice, LPrice, LMoney, LDdr, LProcessor, LMb: TLabel;
     BCollect, BClean: TButton;
     SBComputer: TScrollBox;
+    DBGComponents: TDBGrid;
   public
     { Public declarations }
   published
@@ -59,7 +61,7 @@ begin
   LNamePrice.Caption := WebPage.GetNamePrice;
 
   LPrice := TLabel.Create(nil);
-  LPrice.Left := 16;
+  LPrice.Left := 24;
   LPrice.Top := 28;
   LPrice.Alignment := taRightJustify;
   LPrice.Parent := PSideBar;

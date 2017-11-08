@@ -16,6 +16,7 @@ type
   private
     /// <link>aggregation</link>
     fCaption: string;
+    /// <link>aggregation</link>
     fComputer: TComputer;
     fNamePrice: string;
     fPrice: string;
