@@ -5,7 +5,8 @@ interface
 uses Contnrs,
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
+  Unit4;
 
 type
   TComponents = class;
@@ -18,6 +19,8 @@ type
     fCaption: string;
     /// <link>aggregation</link>
     fComputer: TComputer;
+    /// <link>aggregation</link>
+    Connector: TConnector;
     fNamePrice: string;
     fPrice: string;
     fMoney: string;
@@ -27,8 +30,10 @@ type
     function GetNamePrice: string;
     function GetPrice: string;
     function GetMoney: string;
+    function GetConnector: TConnector;
   published
-    constructor create(Caption: string; Computer: TComputer; NamePrice: string; Price: string; Money: string);
+    constructor create(Caption: string; Computer: TComputer; NamePrice: string;
+      Price: string; Money: string);
   end;
 
   TComputer = class
@@ -172,18 +177,26 @@ begin
   result := fCaption;
 end;
 
-constructor TWebPage.create(Caption: string; Computer: TComputer; NamePrice: string; Price: string; Money: string);
+constructor TWebPage.create(Caption: string; Computer: TComputer;
+  NamePrice: string; Price: string; Money: string);
 begin
   fCaption := Caption;
   fComputer := Computer;
   fNamePrice := NamePrice;
   fPrice := Price;
   fMoney := Money;
+  Connector := TConnector.create('2307','root','localhost','store','3306');
+  Connector.install;
 end;
 
 function TWebPage.GetComputer: TComputer;
 begin
   result := fComputer;
+end;
+
+function TWebPage.GetConnector: TConnector;
+begin
+  result := Connector;
 end;
 
 function TWebPage.GetMoney: string;
