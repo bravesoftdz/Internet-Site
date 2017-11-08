@@ -11,10 +11,6 @@ uses
 
 type
   TForm1 = class(TForm)
-    DBGrid1: TDBGrid;
-    DataSource1: TDataSource;
-    ADOConnection1: TADOConnection;
-    ADOQuery1: TADOQuery;
   private
     /// <link>aggregation</link>
     WebPage: TWebPage;
