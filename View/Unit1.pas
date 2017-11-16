@@ -3,24 +3,32 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, ToolWin, ActnMan, ActnCtrls,
+  ActnMenus, Menus, Data.DB, Data.Win.ADODB, Contnrs,
+  Generics.Collections,
   UController;
 
 type
   TForm1 = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
   private
-    { Private declarations }
+    /// <link>aggregation</link>
+    Controller: TInterfaceController;
   public
-    { Public declarations }
   end;
-
-var
-  Form1: TForm1;
 
 implementation
 
 {$R *.dfm}
+
+{ TForm1 }
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Controller := TController.create;
+  Controller.ButtonClick(self);
+end;
 
 end.
